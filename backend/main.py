@@ -37,3 +37,55 @@ def print_trip_summary(
 # Call it with any trip
 print_trip_summary("Japan", 5, 1500, "Family", 900, 300, 250, 100)
 print_trip_summary("Bali", 3, 800, "Backpacker", 300, 150, 100, 75)
+
+"""
+# Translate business rules into code
+if budget < 1000:
+    category = "Backpacker"
+elif budget <= 3000:
+    category = "Standard"
+else:
+    category = "Luxury"
+
+print(f"Category : {category}")
+"""
+
+"""
+# Arithmetic operators: + - * / //
+daily_budget = budget/days
+
+print(f"Daily Budget : {daily_budget} USD/day")
+"""
+
+# A list holds multiple values
+
+recommended_places = [
+    "Tokyo Tower",
+    "Shibuya",
+    "Mount Fuji"
+]
+
+# Loop through the list
+for place in recommended_places:
+    print(f" - {place}")
+
+# def calculate_daily_budget(budget, days):
+#     return budget/days
+
+# def get_trip_category(budget):
+#     if budget < 1000:
+#         return "Backpacker"
+#     elif budget < 3000:
+#         return "Standard"
+#     else:
+#         return "Luxury"
+
+# daily = calculate_daily_budget(1500,5)
+# category = get_trip_category(1500)
+# print(f"{category} · {daily} USD/day")
+
+from services.trip_service import calculate_daily_budget, get_trip_category
+
+daily = calculate_daily_budget(1500,5)
+category = get_trip_category(1500)
+print(f"{category} · {daily} USD/day")
