@@ -1,91 +1,25 @@
-# Now use them
-def print_trip_summary(
-    destination,
-    days,
-    budget,
-    travel_style,
-    hotel_cost,
-    food_cost,
-    transportation_cost,
-    miscellaneous_cost
-):
-    total_estimated_cost = (
-        hotel_cost
-        + food_cost
-        + transportation_cost
-        + miscellaneous_cost
-    )
-
+def print_trip_summary(destination, country, days, budget, currency, travel_month):
     print("========================")
     print("KelanaAI")
     print("========================")
     print(f"Destination : {destination}")
+    print(f"Country     : {country}")
     print(f"Days        : {days}")
-    print(f"Budget      : {budget}")
-    print(f"Style       : {travel_style}")
-    print(f"Hotel Cost  : {hotel_cost}")
-    print(f"Food Cost   : {food_cost}")
-    print(f"Transport   : {transportation_cost}")
-    print(f"Misc Cost   : {miscellaneous_cost}")
-    print(f"Total Cost  : {total_estimated_cost}")
+    print(f"Budget      : {budget} {currency}")
+    print(f"Currency    : {currency}")
+    print(f"Travel Month: {travel_month}")
 
-    if total_estimated_cost > budget:
-        print("⚠️ Budget exceeded.")
 
-    print()
+def main():
+    destination = input("Masukkan destinasi: ")
+    country = input("Masukkan negara: ")
+    days = int(input("Masukkan jumlah hari: "))
+    budget = float(input("Masukkan budget: "))
+    currency = input("Masukkan mata uang: ")
+    travel_month = input("Masukkan bulan perjalanan: ")
 
-# Call it with any trip
-print_trip_summary("Japan", 5, 1500, "Family", 900, 300, 250, 100)
-print_trip_summary("Bali", 3, 800, "Backpacker", 300, 150, 100, 75)
+    print_trip_summary(destination, country, days, budget, currency, travel_month)
 
-"""
-# Translate business rules into code
-if budget < 1000:
-    category = "Backpacker"
-elif budget <= 3000:
-    category = "Standard"
-else:
-    category = "Luxury"
 
-print(f"Category : {category}")
-"""
-
-"""
-# Arithmetic operators: + - * / //
-daily_budget = budget/days
-
-print(f"Daily Budget : {daily_budget} USD/day")
-"""
-
-# A list holds multiple values
-
-recommended_places = [
-    "Tokyo Tower",
-    "Shibuya",
-    "Mount Fuji"
-]
-
-# Loop through the list
-for place in recommended_places:
-    print(f" - {place}")
-
-# def calculate_daily_budget(budget, days):
-#     return budget/days
-
-# def get_trip_category(budget):
-#     if budget < 1000:
-#         return "Backpacker"
-#     elif budget < 3000:
-#         return "Standard"
-#     else:
-#         return "Luxury"
-
-# daily = calculate_daily_budget(1500,5)
-# category = get_trip_category(1500)
-# print(f"{category} · {daily} USD/day")
-
-from services.trip_service import calculate_daily_budget, get_trip_category
-
-daily = calculate_daily_budget(1500,5)
-category = get_trip_category(1500)
-print(f"{category} · {daily} USD/day")
+if __name__ == "__main__":
+    main()
