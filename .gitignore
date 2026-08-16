@@ -10,4 +10,6 @@ venv/
 # Node (untuk frontend nanti)
 node_modules/
 dist/
-.envbackend/venv/
+.env
+
+backend/venv/
