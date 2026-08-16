@@ -36,3 +36,11 @@ def print_recommended_places(destination):
     print("Recommended Places")
     for place in places:
         print(f"- {place}")
+
+
+def get_transportations():
+    return ["Bus", "Train", "Flight"]
+
+
+def get_default_recommendations():
+    return ["Tokyo Tower", "Mount Fuji", "Shibuya"]
